@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Update Profile</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="edit-profile-container">
+    <img 
+    class="profilePic" 
+    *ngIf="user.profile_pic" 
+    src="{{user.profile_pic}}" 
+    alt="">
+    <h1 class="edit-profile-container__role">{{user.role}}</h1>
+    <form 
+    class="edit-profile-container__form" 
+    [formGroup]="editProfileForm" 
+    (ngSubmit)="updateProfile($event)">
+      <mat-form-field class="edit-profile-container__form__input">
+        <input matInput 
+        placeholder="New name" 
+        formControlName="name" 
+        type="text">
+        <mat-error 
+        *ngIf="editProfileForm.controls['name'].invalid"></mat-error>
+      </mat-form-field>
+      <mat-form-field class="edit-profile-container__form__input">
+        <input matInput 
+        placeholder="New email" 
+        formControlName="email" 
+        type="text">
+        <mat-error 
+        *ngIf="editProfileForm.controls['email'].invalid">
+        {{getErrorMessage("email")}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="edit-profile-container__form__input">
+        <input matInput 
+        placeholder="New password" 
+        formControlName="password" 
+        [type]="hidePassword ? 'password' : 'text'">
+        <mat-error *ngIf="editProfileForm.controls['password'].invalid"></mat-error>
+        <button mat-icon-button 
+        matSuffix 
+        (click)="hideOrUnhidePassword($event, 'hidePassword')">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="edit-profile-container__form__actions">
+        <button mat-flat-button mat-dialog-close 
+        class="edit-profile-container__form__actions__action">Cancel</button>
+        <button mat-flat-button 
+        [mat-dialog-close]="true" 
+        class="edit-profile-container__form__actions__action__update" 
+        [disabled]="editProfileForm.invalid" 
+        type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
