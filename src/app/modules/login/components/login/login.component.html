@@ -1,0 +1,64 @@
+<div class="login-container">
+    <div class="login-logo-container">
+      <img 
+      class="login-logo-container__img" 
+      src="./../../../../../assets/images/ifarm_logo.svg" 
+      alt="logo_image">
+    </div>
+
+    <div class="login-form">
+      <div class="login-form-title-container">
+        <p class="login-form-title-container__title">Login</p>
+      </div>
+
+      <div class="login-form-container">
+        <form 
+        class="login-form-container__form" 
+        [formGroup]="loginForm" 
+        (ngSubmit)="login($event)">
+          <mat-form-field class="login-form-container__form__input">
+            <input matInput 
+            type="text"
+            placeholder="Email" 
+            formControlName="email">
+            <mat-error 
+            *ngIf="loginForm.controls['email'].invalid">
+            {{getErrorMessage("email")}}</mat-error>
+            <mat-icon matPrefix>person &nbsp;</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="login-form-container__form__input">
+            <input matInput 
+            placeholder="Password" 
+            formControlName="password" 
+            [type]="hidePassword ? 'password' : 'text'">
+            <mat-error 
+            *ngIf="loginForm.controls['password'].invalid">
+            {{getErrorMessage("password")}}</mat-error>
+            <mat-icon matPrefix>lock &nbsp;</mat-icon>
+            <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="hideOrUnhidePassword($event)">
+              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button 
+          type="submit" 
+          class="login-form-container__form__submit" 
+          [disabled]="loginForm.invalid" 
+          mat-flat-button>Login</button>
+          
+          <p 
+          class="login-form-container__form__register">
+          You don't have an account? 
+          <a 
+          class="login-form-container__form__register__link" 
+          routerLink="/register">Sign up here</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
