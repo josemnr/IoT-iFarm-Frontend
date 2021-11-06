@@ -7,18 +7,20 @@
     src="{{user.profile_pic}}" 
     alt="">
     <h1 class="edit-profile-container__role">{{user.role}}</h1>
+    
     <form 
     class="edit-profile-container__form" 
     [formGroup]="editProfileForm" 
     (ngSubmit)="updateProfile($event)">
       <mat-form-field class="edit-profile-container__form__input">
         <input matInput 
+        type="text"
         placeholder="New name" 
-        formControlName="name" 
-        type="text">
+        formControlName="name">
         <mat-error 
         *ngIf="editProfileForm.controls['name'].invalid"></mat-error>
       </mat-form-field>
+
       <mat-form-field class="edit-profile-container__form__input">
         <input matInput 
         placeholder="New email" 
@@ -28,6 +30,7 @@
         *ngIf="editProfileForm.controls['email'].invalid">
         {{getErrorMessage("email")}}</mat-error>
       </mat-form-field>
+
       <mat-form-field class="edit-profile-container__form__input">
         <input matInput 
         placeholder="New password" 
@@ -40,14 +43,16 @@
           <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      
       <div class="edit-profile-container__form__actions">
         <button mat-flat-button mat-dialog-close 
         class="edit-profile-container__form__actions__action">Cancel</button>
+
         <button mat-flat-button 
+        type="submit"
         [mat-dialog-close]="true" 
         class="edit-profile-container__form__actions__action__update" 
-        [disabled]="editProfileForm.invalid" 
-        type="submit">Update</button>
+        [disabled]="editProfileForm.invalid">Update</button>
       </div>
     </form>
   </div>
