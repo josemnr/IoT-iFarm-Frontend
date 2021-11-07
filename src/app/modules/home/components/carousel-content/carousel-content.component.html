@@ -1,0 +1,7 @@
+<div *ngIf="content" class="carousel-content">
+    <app-greenhouse-card
+    *ngFor="let greenhouse of content"
+    [greenhouse]="greenhouse"></app-greenhouse-card>
+  </div>
+  
+  
