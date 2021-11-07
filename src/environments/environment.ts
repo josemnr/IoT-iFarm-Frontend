@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  authUrl: "http://localhost:3000/",
-  usersUrl: "http://localhost:3000/",
-  seedsUrl: "http://localhost:3000/",
-  calendarUrl: "http://localhost:3000/",
-  greenhousesUrl:"http://localhost:3000/"
+  authUrl: "http://localhost:3000/api",
+  usersUrl: "http://localhost:3000/api",
+  seedsUrl: "http://localhost:3000/api",
+  calendarUrl: "http://localhost:3000/api",
+  greenhousesUrl:"http://localhost:3000/api"
 };
 
 /*
