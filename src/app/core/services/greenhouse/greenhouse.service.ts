@@ -27,7 +27,7 @@ export class GreenhouseService {
     });
   }
 
-  createGreenhouse(greenhouse): Promise<any>{
+  createGreenhouse(greenhouse: any): Promise<any>{
     return this.httpClient.post(`${environment.greenhousesUrl}/greenhouses`, greenhouse, {
       headers: this.httpHeaders
     }).toPromise();

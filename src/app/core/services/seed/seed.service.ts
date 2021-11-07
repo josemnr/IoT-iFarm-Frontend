@@ -33,7 +33,7 @@ export class SeedService {
     });
   }
 
-  CreateSeed(seed){
+  CreateSeed(seed: any){
     return this.httpClient.post<ApiResponse>(`${environment.seedsUrl}/seeds/`, seed, {
       headers: this.httpHeaders
     });
