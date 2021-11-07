@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
@@ -13,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   declarations: [],
   imports: [
     CommonModule,
+    MatCardModule,
     MatIconModule,
     MatMenuModule,
     MatInputModule,
@@ -22,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule
   ],
   exports: [
+    MatCardModule,
     MatIconModule,
     MatMenuModule,
     MatInputModule,
