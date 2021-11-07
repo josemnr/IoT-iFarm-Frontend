@@ -38,7 +38,7 @@ export class EditProfileDialogComponent implements OnInit {
 
   updateProfile(event: Event) {
     event.preventDefault();
-    let dataToUpdate:any
+    let dataToUpdate:any = {}
     if (this.editProfileForm.valid) {
       if (this.editProfileForm.value.name != "") {
         dataToUpdate["name"] = this.editProfileForm.value.name;
