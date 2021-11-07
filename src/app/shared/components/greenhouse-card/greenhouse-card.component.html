@@ -1,0 +1,42 @@
+<mat-card class="greenhouse-card" *ngIf="seed">
+    <mat-card-header class="card-title-container">
+      <mat-card-title 
+      class="card-title-container__text">
+      {{greenhouse.name}}</mat-card-title>
+    </mat-card-header>
+
+    <div class="card-image-container">
+      <img mat-card-image 
+      *ngIf="seed" 
+      alt="Photo of seed"
+      src="{{seed.image}}" 
+      class="card-image-container__image"> 
+    </div>
+
+    <mat-card-content class="card-info-container">
+      <div class="card-info-container__param">
+        <p class="card-info-container__param__title">TEMPERATURE</p>
+        <p class="card-info-container__param__value">
+            <span 
+            style="font-weight: bold;">
+            {{greenhouse.temperature}}</span>°C</p>
+      </div>
+
+      <div class="card-info-container__param">
+        <p class="card-info-container__param__title">LIGHT</p>
+        <p class="card-info-container__param__value">
+            <span 
+            style="font-weight: bold;">
+            {{(greenhouse.blue_light+greenhouse.red_light)/2}}</span>nm</p>
+      </div>
+
+      <div class="card-info-container__param">
+        <p class="card-info-container__param__title">HUMIDITY</p>
+        <p class="card-info-container__param__value">
+            <span 
+            style="font-weight: bold;">
+            {{greenhouse.humidity*100}}</span>%</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
