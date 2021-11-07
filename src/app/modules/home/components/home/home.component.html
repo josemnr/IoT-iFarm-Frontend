@@ -1,0 +1,16 @@
+
+<app-home-header *ngIf="user"></app-home-header>
+<div class="home-container">
+  <app-home-carousel 
+  *ngIf="greenhousesSublist.length >= 1" 
+  [allContent]="greenhousesSublist"></app-home-carousel>
+  <div class="home-actions-container">
+    <button
+    mat-flat-button
+    (click)="goToCreate($event)"
+    *ngIf="user && user.role == 'supervisor'"
+    class="home-actions-container__new">
+    <span class="material-icons">add</span>
+    New Greenhouse</button>
+  </div>
+</div>
