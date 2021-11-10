@@ -10,9 +10,7 @@ export interface Seed {
   max_blue_light: number;
   min_humidity: number;
   max_humidity: number;
-  min_morning_temperature: number;
-  max_morning_temperature: number;
-  min_night_temperature: number;
-  max_night_temperature: number;
+  min_temperature: number;
+  max_temperature: number;
   image: string;
 }
