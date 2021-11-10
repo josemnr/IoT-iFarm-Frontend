@@ -1,10 +1,10 @@
 import {
-  Component,
-  OnInit,
-  OnChanges,
   Input,
+  OnInit,
+  ViewChild,
+  Component,
+  OnChanges,
   SimpleChanges,
-  ViewChild
 } from '@angular/core';
 
 import { 
