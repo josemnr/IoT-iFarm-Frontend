@@ -1,0 +1,36 @@
+<div class="carousel-content">
+    <div class="greenhouse-card-container">
+      <app-greenhouse-card 
+      [greenhouse]="content"></app-greenhouse-card>
+      
+      <div class="card-actions-container">
+        <button
+        *ngIf="user.role=='supervisor'"
+        mat-flat-button color="warn"
+        class="card-actions-container__delete"
+        (click)="deleteGreenhouse()">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="greenhouse-charts-container" 
+    *ngIf="dataReady">
+      <div class="greenhouse-charts-container__chart" 
+      *ngFor="let param of paramsTitles">
+        <app-line-chart
+        [maxValue]="maxValues[param]"
+        [minValue]="minValues[param]"
+        [title]="param"
+        [data]="dayData[param]"
+        [labels]="xLabelTest"></app-line-chart>
+      </div>
+    </div>
+
+    <div class="summary-container">
+      <button mat-raised-button 
+      class="summary-container__button">
+      Send Feedback</button>
+    </div>
+  </div>
+  

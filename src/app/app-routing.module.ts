@@ -1,5 +1,11 @@
+import { 
+  RouterModule, 
+  Routes, 
+  PreloadAllModules 
+} from '@angular/router';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+
+import {LayoutComponent} from './shared/components/layout/layout.component';
 
 const routes: Routes = [
   {
@@ -14,6 +20,16 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children:[
+      {
+        path: 'tracing',
+        loadChildren: () => import('./modules/tracing/tracing.module').then(m => m.TracingModule)
+      }
+    ]
   }
 ];
 

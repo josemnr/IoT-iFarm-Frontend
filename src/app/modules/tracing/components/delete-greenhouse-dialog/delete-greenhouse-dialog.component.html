@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Delete Greenhouse</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div class="delete-greenhouse-container">
+    <h2 class="delete-greenhouse-container__ad">Are you sure?</h2>
+    
+    <h3 class="delete-greenhouse-container__second-ad">
+        To delete {{greenhouse.name}} greenhouse, type: 
+    </h3>
+    
+    <form class="edit-profile-container__form" 
+    [formGroup]="deleteGreenhouseForm">
+      <mat-form-field class="delete-greenhouse-container__form__input">
+        <input matInput placeholder="Delete" formControlName="confirmation" type="text">
+        <mat-error *ngIf="deleteGreenhouseForm.controls['confirmation'].invalid"></mat-error>
+      </mat-form-field>
+
+      <div class="delete-greenhouse-container__form__actions">
+        <button mat-flat-button 
+        mat-dialog-close 
+        class="delete-greenhouse-container__form__actions__action">
+        Cancel</button>
+        
+        <button
+        mat-flat-button
+        [disabled]="deleteGreenhouseForm.invalid"
+        (click)="deleteGreenhouse($event)"
+        class="delete-greenhouse-container__form__actions__action__delete">
+        Delete</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+
