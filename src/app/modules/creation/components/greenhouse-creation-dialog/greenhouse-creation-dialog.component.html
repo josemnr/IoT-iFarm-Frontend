@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Create Greenhouse</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="create-greenhouse-container">
+    <a class="create-greenhouse-container__image-container">
+      <img class="create-greenhouse-container__image-container__image" src="{{selected.image}}" alt="">
+    </a>
+    <form class="create-greenhouse-container__form" [formGroup]="createGreenhouseForm" (ngSubmit)="createGreenhouse($event)">
+      <mat-form-field class="create-greenhouse-container__form__input__firstSection">
+        <mat-label>Crop</mat-label>
+        <mat-select #seedSelect [(value)]="selected">
+          <mat-option *ngFor="let seed of data" [value]="seed">
+            {{seed.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="create-greenhouse-container__form__input__firstSection">
+        <input matInput placeholder="Greenhouse name" formControlName="name" type="text">
+        <mat-error *ngIf="createGreenhouseForm.controls['name'].invalid"></mat-error>
+      </mat-form-field>
+      <mat-form-field class="create-greenhouse-container__form__input__firstSection">
+        <input matInput placeholder="Light" formControlName="red_light" type="number">
+        <mat-error *ngIf="createGreenhouseForm.controls['red_light'].invalid"></mat-error>
+      </mat-form-field>
+      <mat-form-field class="create-greenhouse-container__form__input__firstSection">
+        <input matInput placeholder="Humidity" formControlName="humidity" type="number">
+        <mat-error *ngIf="createGreenhouseForm.controls['humidity'].invalid"></mat-error>
+      </mat-form-field>
+      <mat-form-field class="create-greenhouse-container__form__input__firstSection">
+        <input matInput placeholder="Temperature" formControlName="temperature" type="number">
+        <mat-error *ngIf="createGreenhouseForm.controls['temperature'].invalid"></mat-error>
+      </mat-form-field>
+      <div class="create-greenhouse-container__form__actions">
+        <button
+        mat-flat-button
+        mat-dialog-close
+        class="create-greenhouse-container__form__actions__action">Cancel</button>
+        <button
+        type="submit"
+        mat-flat-button
+        [disabled]="createGreenhouseForm.invalid"
+        class="create-greenhouse-container__form__actions__action__create">Create</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

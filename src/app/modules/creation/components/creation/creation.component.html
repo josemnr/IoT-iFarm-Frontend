@@ -1,0 +1,20 @@
+<div class="creation-container">
+  <div class="creation-container__title">
+    <h1 class="creation-container__title__text">Greenhouses</h1>
+    <button mat-mini-fab
+    class="creation-container__new"
+    (click)="createGreenhouse($event)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <app-creation-greenhouses-carousel [allContent]="greenhousesSublist"></app-creation-greenhouses-carousel>
+  <div class="creation-container__title">
+    <h1 class="creation-container__title__text">Crops</h1>
+    <button mat-mini-fab
+    class="creation-container__new"
+    (click)="createSeed($event)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <app-creation-seeds-carousel [allContent]="seedsSublist"></app-creation-seeds-carousel>
+</div>

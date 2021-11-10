@@ -1,0 +1,21 @@
+.creation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__title {
+    display: flex;
+    align-items: center;
+    margin: 40px;
+    &__text {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 27px;
+      margin-bottom: 0;
+      color: #707070;
+    }
+  }
+  &__new {
+    margin-left: 10px;
+    color: white;
+    background-color: #93C49E;
+  }
+}

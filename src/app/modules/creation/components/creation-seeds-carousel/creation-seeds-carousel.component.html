@@ -1,0 +1,7 @@
+<ngb-carousel class="creation-seeds-carousel">
+  <ng-template ngbSlide *ngFor="let slideContent of allContent;let i = index">
+    <app-carousel-content [content]="slideContent" [contentType]="'seeds'"></app-carousel-content>
+  </ng-template>
+</ngb-carousel>
+
+

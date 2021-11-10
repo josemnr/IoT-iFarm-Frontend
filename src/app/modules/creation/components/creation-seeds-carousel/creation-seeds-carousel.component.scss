@@ -1,0 +1,48 @@
+.carousel {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.creation-seeds-carousel {
+  position: relative !important;
+  margin-top: 0px !important;
+}
+
+.slide {
+  display: flex;
+}
+
+.carousel-inner {
+  width: 86%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 64px;
+  height: 64px;
+  top: auto;
+  bottom: auto;
+  border-radius: 50%;
+  background-color: #A8A8A8;
+  opacity:100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.carousel-control-prev {
+  margin-left: 22px;
+}
+
+.carousel-control-next {
+  margin-right: 22px;
+}

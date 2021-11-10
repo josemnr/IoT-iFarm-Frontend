@@ -1,0 +1,13 @@
+<div *ngIf="content && contentType=='greenhouses'" class="carousel-content">
+    <app-greenhouse-creation-card
+    *ngFor="let greenhouse of content"
+    [greenhouse]="greenhouse"></app-greenhouse-creation-card>
+  </div>
+  <div *ngIf="content && contentType=='seeds'" class="carousel-content">
+    <app-seed-creation-card
+    *ngFor="let seed of content"
+    [seed]="seed"></app-seed-creation-card>
+  </div>
+  
+  
+  

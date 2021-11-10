@@ -1,6 +1,6 @@
 import { 
-  RouterModule, 
   Routes, 
+  RouterModule, 
   PreloadAllModules 
 } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -40,7 +40,17 @@ const routes: Routes = [
     children:[
       {
         path: 'tracing',
-        loadChildren: () => import('./modules/tracing/tracing.module').then(m => m.TracingModule)
+        loadChildren: () => 
+        import('./modules/tracing/tracing.module').then(
+          m => m.TracingModule
+        )
+      },
+      {
+        path: 'creation',
+        loadChildren: () => 
+        import('./modules/creation/creation.module').then(
+          m => m.CreationModule
+        )
       }
     ]
   }

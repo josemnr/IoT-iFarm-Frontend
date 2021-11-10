@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Create Crop</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="create-seed-container">
+    <!-- <img class="profilePic" *ngIf="user.profile_pic" src="{{user.profile_pic}}" alt=""> -->
+    <a class="create-seed-container__image">
+      <mat-icon class="create-seed-container__image__icon">file_upload</mat-icon>
+    </a>
+    <form class="create-seed-container__form" [formGroup]="createSeedForm" (ngSubmit)="createSeed($event)">
+      <mat-form-field class="create-seed-container__form__input__firstSection">
+        <input matInput placeholder="Crop name" formControlName="name" type="text">
+        <mat-error *ngIf="createSeedForm.controls['name'].invalid"></mat-error>
+      </mat-form-field>
+      <mat-form-field class="create-seed-container__form__input__firstSection">
+        <input matInput placeholder="Cultivation time" formControlName="time" type="number">
+        <mat-error *ngIf="createSeedForm.controls['time'].invalid"></mat-error>
+      </mat-form-field>
+      <div class="create-seed-container__form__inputGroup">
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Minimum light" formControlName="min_blue_light" type="number">
+          <mat-error *ngIf="createSeedForm.controls['min_blue_light'].invalid"></mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Maximum light" formControlName="max_blue_light" type="number">
+          <mat-error *ngIf="createSeedForm.controls['max_blue_light'].invalid"></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="create-seed-container__form__inputGroup">
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Minimum humidity" formControlName="min_humidity" type="number">
+          <mat-error *ngIf="createSeedForm.controls['min_humidity'].invalid"></mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Maximum humidity" formControlName="max_humidity" type="number">
+          <mat-error *ngIf="createSeedForm.controls['max_humidity'].invalid"></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="create-seed-container__form__inputGroup">
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Minimum temperature" formControlName="min_temperature" type="number">
+          <mat-error *ngIf="createSeedForm.controls['min_temperature'].invalid"></mat-error>
+        </mat-form-field>
+        <mat-form-field class="create-seed-container__form__inputGroup__input">
+          <input matInput placeholder="Maximum temperature" formControlName="max_temperature" type="number">
+          <mat-error *ngIf="createSeedForm.controls['max_temperature'].invalid"></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="create-seed-container__form__actions">
+        <button
+        mat-flat-button
+        mat-dialog-close
+        class="create-seed-container__form__actions__action">Cancel</button>
+        <button
+        type="submit"
+        mat-flat-button
+        [disabled]="createSeedForm.invalid"
+        class="create-seed-container__form__actions__action__create">Create</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
