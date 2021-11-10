@@ -1,0 +1,46 @@
+mat-toolbar {
+    height: 10%;
+    background-color: #C3E1CA;
+  }
+  
+  mat-toolbar-row {
+    height: 100%;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .header-options {
+    &__option {
+      padding: 0;
+      margin-right: 30px;
+      margin-left: 30px;
+      text-decoration: none;
+      color: #707070;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 22px;
+      font-weight: normal;
+    }
+    &__profile {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border:3px solid #707070;
+      &__image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  a.active {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

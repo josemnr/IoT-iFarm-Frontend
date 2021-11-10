@@ -1,0 +1,52 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+      <a mat-button 
+      routerLink="/home" 
+      routerLinkActive="active"
+      class="header-options__option">Home</a>
+
+      <span class="spacer"></span>
+      
+      <a mat-button     
+      routerLink="/tracing" 
+      routerLinkActive="active"
+      class="header-options__option">Tracing</a>
+
+      <a mat-button 
+      class="header-options__option" 
+      routerLink="/predictions" 
+      routerLinkActive="active">Predictions</a>
+
+      <a mat-button 
+      routerLink="/users" 
+      routerLinkActive="active"
+      class="header-options__option">Users</a>
+
+      <a mat-button
+      [matMenuTriggerFor]="menu"
+      class="header-options__option">
+        <img
+        alt=""
+        *ngIf="profile_pic" 
+        src="{{profile_pic}}" 
+        class="header-options__profile">
+      </a>
+
+      <mat-menu #menu="matMenu">
+        <button 
+        mat-menu-item 
+        (click)="editProfile($event)">
+          <mat-icon>edit</mat-icon>
+          <span>Edit profile</span>
+        </button>
+
+        <button 
+        mat-menu-item 
+        (click)="logout($event)">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
