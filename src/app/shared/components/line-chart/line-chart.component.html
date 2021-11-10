@@ -1,0 +1,15 @@
+<div class="chart-container" 
+*ngIf="title">
+    <div class="chart">
+      <canvas baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [options]="lineChartOptions"
+        [plugins]="lineChartPlugins"
+        [chartType]="lineChartType">
+      </canvas>
+    </div>
+  </div>
+  
