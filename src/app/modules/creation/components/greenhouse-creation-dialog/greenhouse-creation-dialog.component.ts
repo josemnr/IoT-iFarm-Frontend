@@ -38,11 +38,7 @@ export class GreenhouseCreationDialogComponent implements OnInit {
   private buildForm() {
     this.createGreenhouseForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(30)]],
-      pH: ['', [Validators.required, Validators.min(0), Validators.max(14)]],
-      red_light: ['', [Validators.required, Validators.min(0), Validators.max(1000)]],
-      blue_light: ['', [Validators.required, Validators.min(0), Validators.max(1000)]],
-      humidity: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
-      temperature: ['', [Validators.required, Validators.min(0), Validators.max(50)]],
+      device_id: ['', [Validators.required, Validators.maxLength(50)]],
     });
   }
 
@@ -50,7 +46,9 @@ export class GreenhouseCreationDialogComponent implements OnInit {
     event.preventDefault();
     console.log(this.createGreenhouseForm.value);
     let greenhouse = this.createGreenhouseForm.value;
-    greenhouse.humidity = greenhouse.humidity / 100;
+    greenhouse.light = 0;
+    greenhouse.humidity = 0;
+    greenhouse.temperature = 0;
     greenhouse.start_at = this.date;
     greenhouse.seed_id = this.selected._id;
     this.greenhouseService.createGreenhouse(greenhouse)
