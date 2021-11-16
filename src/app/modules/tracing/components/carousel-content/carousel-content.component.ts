@@ -89,8 +89,8 @@ export class CarouselContentComponent implements OnInit, OnChanges {
     this.seedService.getSeed(seed_id)
     .subscribe(apiResponse => {
       this.seed = apiResponse.data;
-      this.maxValues['Light'] = this.seed.max_red_light;
-      this.minValues['Light'] = this.seed.min_red_light;
+      this.maxValues['Light'] = this.seed.max_light;
+      this.minValues['Light'] = this.seed.min_light;
       this.maxValues['Humidity'] = this.seed.max_humidity;
       this.minValues['Humidity'] = this.seed.min_humidity;
       this.maxValues['Temperature'] = this.seed.max_temperature;
