@@ -8,6 +8,7 @@ import { TracingComponent } from './components/tracing/tracing.component';
 import { CarouselContentComponent } from './components/carousel-content/carousel-content.component';
 import { TracingCarouselComponent } from './components/tracing-carousel/tracing-carousel.component';
 import { DeleteGreenhouseDialogComponent } from './components/delete-greenhouse-dialog/delete-greenhouse-dialog.component';
+import { SendFeedbackDialogComponent } from './components/send-feedback-dialog/send-feedback-dialog.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DeleteGreenhouseDialogComponent } from './components/delete-greenhouse-
     CarouselContentComponent,
     DeleteGreenhouseDialogComponent,
     TracingCarouselComponent,
-    TracingComponent
+    TracingComponent,
+    SendFeedbackDialogComponent
   ],
   imports: [
     CommonModule,

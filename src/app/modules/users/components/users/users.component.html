@@ -1,0 +1,23 @@
+<div class="cols">
+    <div style="padding: 20px;" >
+        <div *ngIf="loggedUser.role=='supervisor'" class="center">
+            <button mat-raised-button (click)="addUser()">Add User</button>
+        </div>
+        <br>
+        <mat-card *ngFor="let user of usuarios; let i = index;" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <a class="header-options__option">
+                        <img class="header-options__profile" *ngIf="user.profile_pic" [src]="user.profile_pic" alt="">
+                    </a>
+                    {{user.name}}
+                </div>
+                <div *ngIf="loggedUser.role=='supervisor'">
+                    <button mat-raised-button (click)="editUser(i)">Edit</button>
+                    <button mat-raised-button class="red" (click)="borrarUsuario(i)">Delete</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+  </div>
+  

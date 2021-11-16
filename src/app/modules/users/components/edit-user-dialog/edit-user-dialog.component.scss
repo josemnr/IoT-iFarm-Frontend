@@ -1,0 +1,65 @@
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__role {
+      font-size: 2rem;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #686868;
+    }
+    &__form__input {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 18px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    &__form__actions {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      &__action {
+        width: 20%;
+        height: 35px;
+        font-size: 20px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        &__update {
+          color: white;
+          background-color: #93C49E;
+          @extend .edit-profile-container__form__actions__action
+        }
+      }
+    }
+  }
+  
+  .profilePic {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border:3px solid #707070;
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+  }
+  
+  .edit-profile {
+    &__update {
+      width: 30%;
+      height: 40px;
+      font-size: 20px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background-color: #93C49E;
+    }
+  }
+
+.rows{
+  display: flex;
+}
+
+.cols{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

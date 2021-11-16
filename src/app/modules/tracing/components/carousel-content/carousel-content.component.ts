@@ -12,14 +12,18 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { Seed } from 'src/app/core/models/seed.model';
 import { User } from './../../../../core/models/user.model';
-import { DailyData } from './../../../../core/models/dailyData.model';
+// import { DailyData } from './../../../../core/models/dailyData.model';
 import { Greenhouse } from './../../../../core/models/greenhouse.model'
 
 import { SeedService } from './../../../../core/services/seed/seed.service';
 import { CalendarService } from './../../../../core/services/calendar/calendar.service';
 import { LoggedUserService } from '../../../../core/services/loggedUser/logged-user.service';
+import { AuthService } from './../../../../core/services/auth/auth.service';
+import { UsersService } from './../../../../core/services/users/users.service';
+import { GreenhouseService } from '../../../../core/services/greenhouse/greenhouse.service';
 
 import { DeleteGreenhouseDialogComponent } from './../delete-greenhouse-dialog/delete-greenhouse-dialog.component';
+import {  SendFeedbackDialogComponent } from './../send-feedback-dialog/send-feedback-dialog.component'
 
 @Component({
   selector: 'app-carousel-content',
@@ -38,6 +42,11 @@ export class CarouselContentComponent implements OnInit, OnChanges {
   maxValues: any = {};
   minValues: any = {};
 
+  seeds: Seed[] = [];
+  greenhouses: Greenhouse[] = [];
+  seedsSublist: Array<Seed[]> = [];
+  greenhousesSublist: Array<Greenhouse[]> = [];
+
   dayData: any = {
     'Temperature': [],
     'Light': [],
@@ -53,6 +62,9 @@ export class CarouselContentComponent implements OnInit, OnChanges {
     private seedService: SeedService,
     private calendarService: CalendarService,
     private loggedUserService: LoggedUserService,
+    private authService: AuthService,
+    private usersService: UsersService,
+    private greenhouseService: GreenhouseService
   ) {
     this.loggedUserService.loggedUser.subscribe(user => {
       this.user = user;
@@ -106,5 +118,12 @@ export class CarouselContentComponent implements OnInit, OnChanges {
         this.greenhouseDeleted.emit(true);
       }
     });
-  }  
+  }
+  
+  sendFeedback(event: Event) {
+    event.preventDefault();
+    const dialogRef = this.dialog.open(SendFeedbackDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 }

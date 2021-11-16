@@ -1,0 +1,41 @@
+<form [formGroup]="editProfileForm" (ngSubmit)="updateProfile()">
+    <div class="cols">
+      <div style="display: flex;">
+        <div class="cols" style="padding: 25px;">
+          <mat-form-field>
+            <mat-label>email</mat-label>
+            <input matInput formControlName="email" type="text" required>
+            <mat-error *ngIf="editProfileForm.controls['name'].invalid"></mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>name</mat-label>
+            <input matInput formControlName="name" type="text" required>
+            <mat-error *ngIf="editProfileForm.controls['name'].invalid"></mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>password</mat-label>
+            <input matInput formControlName="password" type="text" required>
+            <mat-error *ngIf="editProfileForm.controls['name'].invalid"></mat-error>
+          </mat-form-field>
+        </div>
+        <div style="padding: 25px;">
+          <h3>GreenHouses</h3>
+          <div class="cols">
+            <div *ngFor="let gh of ghUserData; let i = index">
+              <mat-checkbox value="gh.id" [checked]="gh.checked" (change)="setChanged($event,i)">
+                {{gh.name}}
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="justify-content: flex-end; display: flex;">
+        <div>
+          <button mat-flat-button mat-dialog-close>Cancel</button>
+          <button mat-flat-button [mat-dialog-close]="true" [disabled]="editProfileForm.invalid"
+            type="submit">Add</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
