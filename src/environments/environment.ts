@@ -8,7 +8,8 @@ export const environment = {
   usersUrl: "http://localhost:3000/api",
   seedsUrl: "http://localhost:3000/api",
   calendarUrl: "http://localhost:3000/api",
-  greenhousesUrl:"http://localhost:3000/api"
+  greenhousesUrl:"http://localhost:3000/api",
+  feedbackUrl: "http://localhost:3000/api"
 };
 
 /*
