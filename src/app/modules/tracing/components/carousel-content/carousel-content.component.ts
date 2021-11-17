@@ -38,6 +38,7 @@ export class CarouselContentComponent implements OnInit, OnChanges {
   user!: User;
   seed!: Seed;
   dataReady: boolean = false;
+  limitsReady:  boolean = false;
   
   maxValues: any = {};
   minValues: any = {};
@@ -95,6 +96,7 @@ export class CarouselContentComponent implements OnInit, OnChanges {
       this.minValues['Humidity'] = this.seed.min_humidity;
       this.maxValues['Temperature'] = this.seed.max_temperature;
       this.minValues['Temperature'] = this.seed.min_temperature;
+      this.limitsReady = true;
     });
   }
 
@@ -123,6 +125,8 @@ export class CarouselContentComponent implements OnInit, OnChanges {
   sendFeedback(event: Event) {
     event.preventDefault();
     const dialogRef = this.dialog.open(SendFeedbackDialogComponent);
+    dialogRef.componentInstance.greenhouse = this.content;
+    dialogRef.componentInstance.user_name = this.user.name;
     dialogRef.afterClosed().subscribe(result => {
     });
   }

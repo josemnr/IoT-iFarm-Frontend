@@ -1,4 +1,4 @@
 <app-tracing-carousel
-*ngIf="greenhouses.length != 0"
+*ngIf="greenhouses && greenhouses.length != 0"
 [allContent]="greenhouses"
 (ghDeleted)="greenhouseDeleted($event)"></app-tracing-carousel>
