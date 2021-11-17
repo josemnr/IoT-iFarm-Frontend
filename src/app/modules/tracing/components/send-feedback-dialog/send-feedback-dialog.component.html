@@ -1,28 +1,10 @@
 <h2 mat-dialog-title>Send Feedback</h2>
 <mat-dialog-content class="mat-typography">
-  <div class="create-seed-container">
+  <div class="create-feedback-container">
 
-    <!-- <p>¿Qué valor le darías a tu cultivo con las variables actuales?</p>
-      <mat-slider
-      class="score-slider"
-        thumbLabel
-        [max]="5"
-        [min]="0"
-        [step]="1"
-        [tickInterval]="1"
-        [value]="value"
-        aria-labelledby="example-name-label">
-      </mat-slider>
-
-      <p>Escribe algún comentario extra</p> -->
-
-    <form class="create-seed-container__form" 
+    <form class="create-feedback-container__form" 
     [formGroup]="createFeedbackForm" 
-    (ngSubmit)="createSeed($event)">
-      <!-- <mat-form-field class="create-seed-container__form__input__firstSection">
-        <input matInput placeholder="Crop name" formControlName="name" type="text">
-        <mat-error *ngIf="createFeedbackForm.controls['name'].invalid"></mat-error>
-      </mat-form-field> -->
+    (ngSubmit)="createFeedback($event)">
 
       <p>¿Qué valor le darías a tu cultivo con las variables actuales?</p>
       <mat-slider
@@ -36,22 +18,22 @@
       </mat-slider>
 
       <p>Escribe algún comentario extra</p>
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="comment" appearance="fill">
         <mat-label>Leave a comment</mat-label>
         <textarea matInput placeholder="" formControlName="comment"></textarea>
       </mat-form-field>
       
-      <div class="create-seed-container__form__actions">
+      <div class="create-feedback-container__form__actions">
         <button
         mat-flat-button
         mat-dialog-close
-        class="create-seed-container__form__actions__action">Cancel</button>
+        class="create-feedback-container__form__actions__action">Cancel</button>
 
         <button
         type="submit"
         mat-flat-button
         [disabled]="createFeedbackForm.invalid"
-        class="create-seed-container__form__actions__action__create">Send</button>
+        class="create-feedback-container__form__actions__action__create">Send</button>
       </div>
     </form>
   </div>

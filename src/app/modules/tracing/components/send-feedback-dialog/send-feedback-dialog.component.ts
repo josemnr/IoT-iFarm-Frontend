@@ -36,7 +36,7 @@ export class SendFeedbackDialogComponent implements OnInit {
     });
   }
 
-  createSeed(event: Event) {
+  createFeedback(event: Event) {
     event.preventDefault();
     console.log(this.createFeedbackForm.value)
     let feedback = this.createFeedbackForm.value
