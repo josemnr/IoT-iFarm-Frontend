@@ -46,6 +46,13 @@ const routes: Routes = [
         )
       },
       {
+        path: 'predictions',
+        loadChildren: () => 
+        import('./modules/predictions/predictions.module').then(
+          m => m.PredictionsModule
+        )
+      },
+      {
         path: 'users',
         loadChildren: () => 
         import('./modules/users/users.module').then(
