@@ -1,0 +1,28 @@
+<div style="margin: 20px;">
+  <div class="rows">
+    <app-greenhouse-selector class="wide" (selectedChanged)="cambioSelect($event)"></app-greenhouse-selector>
+  </div>
+  <div class="predictions-container">
+    <cdk-virtual-scroll-viewport *ngIf="feedbacks" itemSize="200" class="feedbacks-container">
+      <div *cdkVirtualFor="let feedback of feedbacks" class="feedback">
+        <p>{{feedback.user_name}}</p>
+        <p>{{feedback.score}}</p>
+        <p>{{feedback.comment}}</p>
+        <p>Humedad: {{feedback.params.humidity}}</p>
+        <p>Temperatura: {{feedback.params.temperature}}</p>
+        <p>Luz: {{feedback.params.light}}</p>
+      </div>
+    </cdk-virtual-scroll-viewport>
+
+    <div *ngIf="ready && limitsReady" class="greenhouse-charts-container">
+      <div class="greenhouse-charts-container__chart" *ngFor="let param of paramsTitles">
+        <app-line-chart
+        [maxValue]="maxValues[param]"
+        [minValue]="minValues[param]"
+        [title]="param"
+        [labels]="labels"
+        [data]="daysData[param]"></app-line-chart>
+      </div>
+    </div>
+  </div>
+</div>

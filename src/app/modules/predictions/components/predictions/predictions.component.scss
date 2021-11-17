@@ -1,0 +1,45 @@
+.rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 20px;
+  }
+  
+  .wide{
+    width: 50%;
+  }
+
+  .predictions-container {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: space-evenly;
+  }
+
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+  }
+
+  .feedbacks-container {
+    height: 400px;
+    width: 25%;
+  }
+  
+  .greenhouse-charts-container.ng-star-inserted {
+    width: 70% !important;
+    // margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .greenhouse-charts-container {
+    &__chart {
+      width: 95%;
+      // margin-top: 20px;
+    }
+  }  
