@@ -3,14 +3,46 @@
     <app-greenhouse-selector class="wide" (selectedChanged)="cambioSelect($event)"></app-greenhouse-selector>
   </div>
   <div class="predictions-container">
-    <cdk-virtual-scroll-viewport *ngIf="feedbacks" itemSize="200" class="feedbacks-container">
+    <cdk-virtual-scroll-viewport *ngIf="feedbacks" itemSize="176" class="feedbacks-container">
       <div *cdkVirtualFor="let feedback of feedbacks" class="feedback">
-        <p>{{feedback.user_name}}</p>
-        <p>{{feedback.score}}</p>
-        <p>{{feedback.comment}}</p>
-        <p>Humedad: {{feedback.params.humidity}}</p>
+        <div class="feedback__first-section">
+          <p class="feedback__first-section__username">{{feedback.user_name}}</p>
+          <span class="spacer"></span>
+          <div class="feedback__first-section__score">
+            <p class="feedback__first-section__score__value">{{feedback.score}}</p>
+          </div>
+        </div>
+
+        <p class="feedback__comment">{{feedback.comment}}</p>
+
+        <div class="info-container">
+          <div class="info-container__param">
+            <p class="info-container__param__title">TEMPERATURE</p>
+            <p class="info-container__param__value">
+                <span 
+                style="font-weight: bold;">
+                {{feedback.params.temperature}}</span>°C</p>
+          </div>
+    
+          <div class="info-container__param">
+            <p class="info-container__param__title">LIGHT</p>
+            <p class="info-container__param__value">
+                <span 
+                style="font-weight: bold;">
+                {{feedback.params.light}}</span>nm</p>
+          </div>
+    
+          <div class="info-container__param">
+            <p class="info-container__param__title">HUMIDITY</p>
+            <p class="info-container__param__value">
+                <span 
+                style="font-weight: bold;">
+                {{feedback.params.humidity}}</span>%</p>
+          </div>
+        </div>
+        <!-- <p>Humedad: {{feedback.params.humidity}}</p>
         <p>Temperatura: {{feedback.params.temperature}}</p>
-        <p>Luz: {{feedback.params.light}}</p>
+        <p>Luz: {{feedback.params.light}}</p> -->
       </div>
     </cdk-virtual-scroll-viewport>
 

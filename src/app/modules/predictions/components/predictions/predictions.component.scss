@@ -12,34 +12,104 @@
   .predictions-container {
     display: flex;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 40px;
     justify-content: space-evenly;
+  }
+
+  .greenhouse-charts-container.ng-star-inserted {
+    width: 70% !important;
+    height: 528px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .greenhouse-charts-container {    
+    &__chart {
+      width: 95%;      
+    }
+  }
+
+  .feedbacks-container {
+    height: 528px;
+    width: 25%;
+    margin-left: 4%;
   }
 
   .feedback {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 200px;
+    justify-content: space-around;
+    height: 176px;
+    border-bottom-width: 2px;
+    border-bottom: 2px solid #707070;
+    border-bottom-style:dotted;
+    background: linear-gradient( to bottom, #EFEFEF, #FBFBFB, #FFFFFF);
+    &__comment {
+      margin-left: 15px;
+      margin-right: 20px;
+    }
   }
 
-  .feedbacks-container {
-    height: 400px;
-    width: 25%;
-  }
-  
-  .greenhouse-charts-container.ng-star-inserted {
-    width: 70% !important;
-    // margin-top: 20px;
+
+  .feedback__first-section {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .greenhouse-charts-container {
-    &__chart {
-      width: 95%;
-      // margin-top: 20px;
+    width: 100%;
+    align-items: center;    
+    margin-top: 10px;
+    &__username {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-weight:lighter;
+      color: #707070;
+      margin-left: 15px;
+      align-self: center;
     }
-  }  
+    &__score {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      background-color: #BCC2FB;
+      border-radius: 50%;
+      &__value {
+        margin: 0;
+        align-self: center;
+        font-size: 30px;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .info-container {    
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-evenly;    
+    &__param {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__title {        
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        font-weight:lighter;
+        color: #707070;
+      }
+      &__value {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        font-weight:lighter;
+        color: #707070;
+      }
+    }
+  }
