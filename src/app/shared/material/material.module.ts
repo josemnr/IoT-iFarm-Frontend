@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    MatSliderModule,
     MatToolbarModule,
     MatFormFieldModule
   ],
@@ -33,6 +35,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatButtonModule,
     MatDialogModule,
+    MatSliderModule,
     MatToolbarModule,
     MatCheckboxModule,
     MatFormFieldModule
